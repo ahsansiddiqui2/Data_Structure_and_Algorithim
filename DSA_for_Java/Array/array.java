@@ -4,7 +4,7 @@ class array{
 		Parent [] ar = new Parent[2];
 		ar[0] = new Child();
 		Child[] wr = new Child[2];
-		wr[0] = new Parent();
+		// wr[0] = new Parent();
 
 	}
 }

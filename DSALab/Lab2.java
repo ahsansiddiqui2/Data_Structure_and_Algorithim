@@ -1,6 +1,9 @@
 import java.util.Scanner;
+
+import javax.sound.midi.Soundbank;
 public class Lab2{
 	Scanner scan = new Scanner(System.in);
+	int[] arr;
 	public int Menu(){
 		System.out.println("Menu: ");
 		System.out.println("1 - Input Array/Create Array ");
@@ -14,15 +17,38 @@ public class Lab2{
 		int choice = scan.nextInt();
 		return choice;
 	}
-	void inputArray(){
-System.out.println("We input array");
+	int [] inputArray(){
+		System.out.print("Enter the size of array: ");
+		int size = scan.nextInt();
+		arr = new int[size];
+		for(int i = 0 ; i<arr.length;i++){
+			arr[i]= scan.nextInt();
+		}
+		return arr;
 	}
 	void DisplayTheArray(){
-		System.out.println("Displaying array");
+		System.out.print("[");
+		for (int i=0;i<arr.length;i++) {
+			
+			if(i!=arr.length-1){
+				System.out.print(arr[i]+",");
+			}
+			else
+			System.out.print(arr[i]);
+		}
+		System.out.println("]");
 	}
-	void SearchInArray(){
-		System.out.println("Searching in array");
+	int SearchInArray(){
+		System.out.println("Enter the target you want to find: ");
+		int target = scan.nextInt();
+		for (int i = 0; i < arr.length; i++) {
+			if(arr[i]== target){
+				return i;
+			}
+		}
+		return -1;
 	}
+	
 	void UpdateArray(){
 		System.out.println("Updating the array");
 	}
