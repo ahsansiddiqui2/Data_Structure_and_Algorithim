@@ -1,6 +1,4 @@
 import java.util.Scanner;
-
-import javax.sound.midi.Soundbank;
 public class Lab2{
 	Scanner scan = new Scanner(System.in);
 	int[] arr;
@@ -48,7 +46,7 @@ public class Lab2{
 		}
 		return -1;
 	}
-	
+
 	void UpdateArray(){
 		System.out.println("Updating the array");
 	}
