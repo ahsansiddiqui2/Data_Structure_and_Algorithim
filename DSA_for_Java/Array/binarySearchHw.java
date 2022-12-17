@@ -66,9 +66,11 @@ class Solution{
 			System.out.print("Which element you want to search? ");
 			int target = scan.nextInt();
 
+
+
 			int p=0;
 			int q = ar.length-1;
-			int it = 0;
+			int it = 1;
 			while(p<=q){
 				int i = (p+q)/2;
 				if(ar[i]==target){
