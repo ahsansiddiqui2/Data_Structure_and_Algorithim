@@ -8,15 +8,16 @@ class Linked{
 		Linked start = new Linked(2);
 		start.next = new Linked(3);
 		Linked p = start.next;
-		System.out.println(Sum(p)); 
-		System.out.println(Average(p));
-	}
-	public static int Sum(Linked p){
 		Linked tail1 = p;
 		for(int i=0;i<5;i++){
 			tail1.next = new Linked(i);
 			tail1 = tail1.next;
-		}	
+		}
+		System.out.println(Sum(p)); 
+		System.out.println(Average(p));
+	}
+	public static int Sum(Linked p){
+			
 		int sum = 0;
 		int count = 0;
 		for(Linked s = p;s!=null;s=s.next){
