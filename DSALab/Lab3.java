@@ -1,10 +1,7 @@
 import java.util.Arrays;
 
 class Lab3{
-	int[] arr = {1,2,3,4,5,6,7,8,9,10};
-	int[][] arr1 = {{1,2,3},{4,5,6},{7,8,9}};
-
-		public int LinearSearch1D(int [] A,int key){
+		public static int LinearSearch1D(int [] A,int key){
 		for(int i = 0;i<A.length;i++){
 			if(A[i]==key){
 				return i;
@@ -13,7 +10,7 @@ class Lab3{
 		}
 		return -1;
 	}	
-	public int[] LinearSearch2D(int [][] A,int key){
+	public static int[] LinearSearch2D(int [][] A,int key){
 		int[] pos = new int[2];
 		for(int i =0;i<A.length;i++){
 			for(int j = 0;j<A[i].length;j++){
@@ -26,7 +23,7 @@ class Lab3{
 		}
 		return pos;
 	}
-		public int BinarySearch1D(int [] A,int key){
+		public static int BinarySearch1D(int [] A,int key){
 			Arrays.sort(A);
 		int first = 0;
 		int last = A.length-1;
@@ -46,7 +43,7 @@ class Lab3{
 		return -1;
 }
 	
-	public void BinarySearch2D(int [][]A,int key){
+	public static void BinarySearch2D(int [][]A,int key){
 		for (int i = 0; i < A.length; i++) {
 			Arrays.sort(A[i]);
 		int first = 0;
@@ -71,30 +68,38 @@ class Lab3{
 
 	}
 
-	public void Run() {
-		
+	public static void main(String[] args) {
+		int[] arr = {1,2,3,4,5,6,7,8,9,10};
+	int[][] arr1 = {{1,2,3},{4,5,6},{7,8,9}};
+
 		long before = System.nanoTime();
 		int x = LinearSearch1D(arr,6);
 		long after = System.nanoTime();
 		long timer = after-before;
-		System.out.println(after-before);
+		System.out.println("Time taken by Linear Search 1D: "+(after-before));
 
 		before = System.nanoTime();
 		BinarySearch1D(arr,7);
 		after = System.nanoTime();
 		long time = after -before;
 
-		System.out.println((after-before));
+		System.out.println("Time taken by Binary Search 1D: "+(after-before));
 		if(timer>time){
-			System.out.println("Linear Search");
+			System.out.println("Linear Search took large time to compile.");
 		}
 		else{
-			System.out.println("binary Search");
+			System.out.println("binary Search took large time to compile.");
 		}
+		before = System.nanoTime();
+		LinearSearch2D(arr1,7);
+		after = System.nanoTime(); 
+		System.out.println("Time taken by Linear Search 2D: "+(after-before)+" ns");
+
 		before = System.nanoTime();
 		BinarySearch2D(arr1,7);
 		after = System.nanoTime(); 
-		System.out.println((after-before));
+		System.out.println("Time taken by Binary Search 2D: "+(after-before)+ " ns");
+		
 		
 		}
 }
