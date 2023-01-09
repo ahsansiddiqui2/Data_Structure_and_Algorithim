@@ -1,3 +1,12 @@
+class Question1 {
+	public static void main(String[] args) {
+		Rectangle rect = new Rectangle();
+		rect.setWidth(10);
+		rect.setLength(12);
+		System.out.println("Area of rectangle: "+rect.Area());	
+		System.out.println("Perimeter of rectangle: "+rect.Perimeter());	
+	}
+}
 class Rectangle{
 	
 	private float length;

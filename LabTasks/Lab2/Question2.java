@@ -41,6 +41,7 @@ class Employee{
 		int yearly = Salary*12;
 		int raise = yearly*percentage/100;
 		yearly+=raise;
+		System.out.println("Name: "+FirstName);
 		System.out.println("yearly income is : "+yearly);
 	}
 	Employee(){

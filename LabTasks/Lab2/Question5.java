@@ -1,25 +1,33 @@
 class Question5{
 public static void main(String[] args) {
-    float Larg = 1.8f;
-    float Mid = 1.0f;
-    float Smal = 0.6f;
-    int LargCap = 0;
-    int MidCap = 0;
-    int smalCap = 0;
     int bags =52;
-    while(bags%5!=0){
-        bags++;
+    MyJavaCoffeeOutlet.computeTotalCost(bags); 
+    }
+}
+public class MyJavaCoffeeOutlet {
+  public static void computeTotalCost(int numBags) {
+        while((numBags%5)!=0){
+        ++numBags;
     }
 
-    float cost1 = Larg *2*20;
-    float cost2  =Mid *1*10;
-    float cost3 = Smal*1*5;
+    double cost = 0;
     
-    float total = cost1+cost2+cost3;
-    System.out.println(total);
-}
-}
-class MyJavaCoffeeOutlet{
+    int numLargeBoxes = numBags / 20;
+    cost += numLargeBoxes * 1.80;
+    numBags -= numLargeBoxes * 20;
+
+    int numMediumBoxes = numBags / 10;
+    cost += numMediumBoxes * 1.00;
+    numBags -= numMediumBoxes * 10;
     
-    
+    int numSmallBoxes = numBags / 5;
+    cost += numSmallBoxes * 0.60;
+    numBags -= numSmallBoxes * 5;
+
+    cost += numBags * 0.55;
+    System.out.println("Large Boxes: "+numLargeBoxes);
+    System.out.println("Medium Boxes: "+numMediumBoxes);
+    System.out.println("Small Boxes: "+numSmallBoxes);
+    System.out.println("Total cost: "+ cost);
+  }
 }
