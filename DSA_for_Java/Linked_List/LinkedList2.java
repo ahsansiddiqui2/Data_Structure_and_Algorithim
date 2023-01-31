@@ -52,7 +52,7 @@ public class LinkedList2{
 				i.next = new Node(x,i.next);
 				return p;
 		}
-	}
+	
 	public static Node deleteLastelement(Node p){
 		if(p==null){return p;}
 		for(Node i = p;i!=null;i=i.next){
