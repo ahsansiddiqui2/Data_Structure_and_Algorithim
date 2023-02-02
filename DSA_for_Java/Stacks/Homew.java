@@ -1,6 +1,5 @@
 public class Homew
-{
-    public static void main(String[] args) {
+{    public static void main(String[] args) {
         String[] data={"4","3","a","3","8","4","A","d","S"};
         RPN obj=new RPN(data);
     }
