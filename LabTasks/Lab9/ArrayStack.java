@@ -1,11 +1,10 @@
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 class ArrayStack <T>{
     T [] a;
     int size;
     ArrayStack(Class <T> claz, int Size){
-        a = (T[]) Array.newInstance(claz, Size);
+        a = (T[]) new Object[Size];
         size = 0;
     }
     public T peek(){
